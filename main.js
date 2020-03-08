@@ -4,7 +4,17 @@ const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
 
-
+document.addEventListener("click", (event)){
+  if (event.target.EMPTY_HEART){
+    fetch(mimicServerCall(), config)
+    .then(resp => resp.json)
+    .then(result => result.json)
+    .catch((error) => {
+      alert(error)
+      console.log("Nope. That wasn't it!")
+    })
+  }
+}
 
 
 //------------------------------------------------------------------------------
