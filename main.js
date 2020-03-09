@@ -1,12 +1,13 @@
 // Defining text characters for the empty and full hearts for you to use later.
   // document.getElementById(".modal").className=""
   // document.getElementById("modal").className="modal";
+  document.getElementById("modal").className="modal"
+  document.querySelector(".modal").hidden = true
+  
 
   const EMPTY_HEART = '♡'
   const FULL_HEART = '♥'
   // oneHeart.onclick == false
-  // document.querySelector(".modal").hidden = true
-  
   function likeHeart(event) {
     let oneHeart = event.target;
     mimicServerCall()
@@ -16,7 +17,7 @@
       // oneHeart.onclick == false;
     })
     .catch(() => {
-      // document.innerHTML = document.querySelector(".modal")
+      document.innerHTML = document.querySelector(".modal")
       document.getElementById(".modal").className=""
       
       
