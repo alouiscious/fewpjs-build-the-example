@@ -1,27 +1,38 @@
 // Defining text characters for the empty and full hearts for you to use later.
-const EMPTY_HEART = '♡'
-const FULL_HEART = '♥'
+  document.getElementById("modal").className="modal";
 
-// Your JavaScript code goes here!
+  const EMPTY_HEART = '♡'
+  const FULL_HEART = '♥'
+  // oneHeart.onclick == false
 
-document.addEventListener("click", (event)){
-  if (event.target.EMPTY_HEART){
-    fetch(mimicServerCall(), config)
-    .then(resp => resp.json)
-    .then(result => result.json)
-    .catch((error) => {
-      alert(error)
-      console.log("Nope. That wasn't it!")
+  function likeHeart(event) {
+    let oneHeart = event.target;
+    mimicServerCall()
+    .then(() => {
+      oneHeart.innerHTML = FULL_HEART;
+      oneHeart.style.color = "red";
+      oneHeart.onclick == false;
     })
+    .catch(() => {
+      document.innerHTML = document.querySelector(".modal")
+      
+      
+      
+    })// USE? timeout -  window.setTimeout(window.alert, 5*1000
   }
-}
-
+  
+    let allHearts = document.querySelectorAll(".like-glyph");
+    for (let likeGlyph of allHearts) {
+      likeGlyph.addEventListener("click", likeHeart)
+    }
+    
 
 //------------------------------------------------------------------------------
 // Ignore after this point. Used only for demo purposes
 //------------------------------------------------------------------------------
 
 function mimicServerCall(url="http://mimicServer.example.com", config={}) {
+
   return new Promise(function(resolve, reject) {
     setTimeout(function() {
       let isRandomFailure = Math.random() < .2
