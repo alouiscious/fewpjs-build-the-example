@@ -1,6 +1,5 @@
 // Defining text characters for the empty and full hearts for you to use later.
-  // document.getElementById(".modal").className=""
-  // document.getElementById("modal").className="modal";
+
   document.getElementById("modal").className="modal"
   document.querySelector(".modal").hidden = true
   
@@ -16,12 +15,10 @@
       oneHeart.style.color = "red";
       // oneHeart.onclick == false;
     })
-    .catch(() => {
-      document.innerHTML = document.querySelector(".modal")
-      document.getElementById(".modal").className=""
-      
-      
-      
+    .catch((toggleErr) => {
+      // document.innerHTML = document.querySelector(".modal")
+      let showErr = document.getElementById(".modal").className="modal"
+      toggleErr(showErr);
     })// USE? timeout -  window.setTimeout(window.alert, 5*1000
   }
   
